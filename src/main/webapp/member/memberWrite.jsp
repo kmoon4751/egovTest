@@ -60,6 +60,7 @@ caption {
 			$("#userid").focus();
 			return false;
 		}
+		
 		$.ajax({
 		 type:"POST",
 		 data:"userid="+userid,	//json 전송타입

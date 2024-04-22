@@ -11,7 +11,7 @@
 	 $("#btn_submit").click(function(){
 		var userid = $("#userid").val();
 		var pass = $("#pass").val();
-		alert(pass);
+// 		alert(pass);
 		if(userid == ""){
 			alert("아이디를 입력해주세요");
 			$("#userid").focus();

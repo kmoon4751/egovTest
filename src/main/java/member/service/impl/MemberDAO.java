@@ -18,7 +18,7 @@ public class MemberDAO extends EgovAbstractDAO{
 	
 	//아이디 중복체크
 	public int selectIdChk(String userid) {
-		return (int) select("memberDAO.selectIdChk, userid");
+		return (int) select("memberDAO.selectIdChk", userid);
 	}
 
 	//로그인

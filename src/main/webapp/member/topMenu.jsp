@@ -43,7 +43,7 @@ caption {
 </style>
 <body>
 	<%
-	String sUID = (String)session.getAttribute("sessinId");	//컨트롤러에 있는 세션이름
+	String sUID = (String)session.getAttribute("sessionId");	//컨트롤러에 있는 세션이름
 %>
 
 	<table>

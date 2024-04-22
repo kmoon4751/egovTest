@@ -26,7 +26,7 @@
 	<select id ="selectIdChk" resultClass="Integer">
 	SELECT COUNT(*)
 	 FROM MEMBER
-	 WHERE UESRID = #userid#
+	 WHERE USERID = #userid#
 	</select>
 	
 	<select id="loginProc" resultClass="Integer">

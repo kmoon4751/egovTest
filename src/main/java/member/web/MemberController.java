@@ -35,21 +35,22 @@ public class MemberController {
 		if(result == null) {
 			message = "ok";
 		}
-		
 		return message;
 	}
+	
 	//회원등록 아이디 중복체크 
 	/*중복체크*/
-	@RequestMapping("idChk.do")
+	@RequestMapping("/idChk.do")
 	@ResponseBody
 	public String selectIdChk(String userid) throws Exception{
-		String message = "";
 		System.out.println("USERID : " + userid);
+		String result = "";
+		
 		int cnt = memberService.selectIdChk(userid);
 		if(cnt == 0) {
-			message = "ok";
+			result = "ok";
 		}
-		return message;
+		return result;
 	}
 	
 	
@@ -79,7 +80,7 @@ public class MemberController {
 				}
 			}
 		
-		return "message";
+		return message;
 	}
 	
 	
