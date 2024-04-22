@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
-<sqlMap>
+<sqlMap namespace = "memberDAO">
 	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
 	<typeAlias  alias="memberVO" type="member.service.MemberVO"/>
 	
-	<insert id = "memberDAO.insertMember">
+	<insert id = "insertMember">
 		INSERT INTO MEMBER(USERID,
 							PASS,
 							NAME,
@@ -22,5 +22,18 @@
 						) 
 	
 	</insert>
+	
+	<select id ="selectIdChk" resultClass="Integer">
+	SELECT COUNT(*)
+	 FROM MEMBER
+	 WHERE UESRID = #userid#
+	</select>
+	
+	<select id="loginProc" resultClass="Integer">
+	SELECT COUNT(*)
+	FROM MEMBER
+	WHERE USERID = #userid#	
+		AND PASS = #pass#
+	</select>
 </sqlMap>
 

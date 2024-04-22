@@ -7,12 +7,23 @@ import member.service.MemberVO;
 
 
 
-@Repository("MemberDAO")
+@Repository("memberDAO")
 public class MemberDAO extends EgovAbstractDAO{
 	
+	// 회원가입
 	public String insertMember(MemberVO vo) {
-		return (String) insert("memberDAO.insertMember,vo");
+		return (String) insert("memberDAO.insertMember",vo);
 				
+	}
+	
+	//아이디 중복체크
+	public int selectIdChk(String userid) {
+		return (int) select("memberDAO.selectIdChk, userid");
+	}
+
+	//로그인
+	public int loginProc(MemberVO vo) {
+		return (int) select("memberDAO.loginProc", vo);
 	}
 
 }

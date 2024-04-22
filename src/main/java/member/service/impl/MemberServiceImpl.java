@@ -20,4 +20,13 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.insertMember(vo);
 	}
 
+	@Override
+	public int selectIdChk(String userid) {
+		return memberDAO.selectIdChk(userid);
+	}
+
+	@Override
+	public int loginProc(MemberVO vo) {
+		return memberDAO.loginProc(vo);
+	}
 }
