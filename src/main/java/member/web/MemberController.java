@@ -1,9 +1,12 @@
 package member.web;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -40,7 +43,7 @@ public class MemberController {
 	
 	//회원등록 아이디 중복체크 
 	/*중복체크*/
-	@RequestMapping("/idChk.do")
+	@RequestMapping("idChk.do")
 	@ResponseBody
 	public String selectIdChk(String userid) throws Exception{
 		System.out.println("USERID : " + userid);
@@ -74,7 +77,7 @@ public class MemberController {
 				if(cnt2 == 0) {
 					message = "wrong password";	//패스워드가 틀렸습니다.
 				}else {
-					session.setAttribute("sessionId", vo.getUserid());
+					session.setAttribute("sessionID", vo.getUserid());
 					message="ok";	//로그인 성공
 							
 				}
@@ -97,4 +100,18 @@ public class MemberController {
 		return "member/main";
 	}
 	
+	/*
+	 * 멤버 리스트
+	 * 24.04.24
+	 * */
+	@RequestMapping("memberList.do")
+	public String selectMemberList(ModelMap map) throws Exception{
+		//리스트 형태로 가져온다.
+		List<?> list = memberService.selectMemberList();
+		System.out.println("리스트 : " + list);
+		map.addAttribute("memberList", list);
+		return "member/memberList";
+		
+	}
+		
 }

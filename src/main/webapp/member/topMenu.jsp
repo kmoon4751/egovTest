@@ -43,23 +43,24 @@ caption {
 </style>
 <body>
 	<%
-	String sUID = (String)session.getAttribute("sessionId");	//컨트롤러에 있는 세션이름
+	String sUID = (String)session.getAttribute("sessionID");	//컨트롤러에 있는 세션이름
 %>
 
 	<table>
 		<tr>
-			<th><a href="main.do"></a>홈</th>
-			<th>...</th>
+			<th><a href="main.do">홈</a></th>
 			
 			<%
+			//sUID : 로그인에 성공한 유저의 아이디
 			if(sUID == null){
-			%>
+			%> <!-- 로그인이 돼있지 않으면 -->
 			<th><a href="memberWrite.do">회원가입</a></th>
 			<th><a href="login.do">로그인</a></th>
 			<%
 			
 			}else{
 			%>
+			<th><a href="memberList.do">회원리스트</a></th>
 			<th><a href="logout.do">로그아웃</a></th>
 			<%
 			}

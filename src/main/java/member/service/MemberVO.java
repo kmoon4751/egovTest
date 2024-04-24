@@ -1,6 +1,7 @@
 package member.service;
 
 public class MemberVO {
+	private String rownum;
 	private String userid;
 	private String pass;
 	private String name;
@@ -51,6 +52,12 @@ public class MemberVO {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public String getRownum() {
+		return rownum;
+	}
+	public void setRownum(String rownum) {
+		this.rownum = rownum;
 	}
 
 }

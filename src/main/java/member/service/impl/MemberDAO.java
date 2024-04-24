@@ -1,5 +1,7 @@
 package member.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
@@ -10,6 +12,7 @@ import member.service.MemberVO;
 @Repository("memberDAO")
 public class MemberDAO extends EgovAbstractDAO{
 	
+
 	// 회원가입
 	public String insertMember(MemberVO vo) {
 		return (String) insert("memberDAO.insertMember",vo);
@@ -26,4 +29,8 @@ public class MemberDAO extends EgovAbstractDAO{
 		return (int) select("memberDAO.loginProc", vo);
 	}
 
+	//멤버 리스트
+	public List<?> selectMemberList(){
+		return list("memberDAO.selectMemberList");
+	}
 }

@@ -55,6 +55,7 @@ caption {
 	$("#btn_idChk").click(function(){
 		var userid = $("#userid").val(); 
 		userid = $.trim(userid);
+		
 		if(userid == ""){
 			alert("아이디를 입력해주세요");
 			$("#userid").focus();
@@ -124,7 +125,7 @@ caption {
 				if(result=="ok"){
 					alert("저장 완료하였습니다.");
 					$("#frm")[0].reset();
-// 					location("login.do");
+ 					location.href="login.do";
 				}else{
 					alert("저장 실패하였습니다.");
 				}

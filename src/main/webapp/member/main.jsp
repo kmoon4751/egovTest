@@ -8,6 +8,8 @@
 </head>
 <body>
 	<%@ include file="topMenu.jsp" %>
+	
+	홈화면
 
 </body>
 </html>
